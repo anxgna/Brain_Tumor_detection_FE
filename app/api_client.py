@@ -13,7 +13,15 @@ def predict_tumor(image_filepath: str) -> dict:
     try:
         # STEP 1: UPLOAD THE IMAGE
         with open(image_filepath, "rb") as file:
-            files = {"file": file}
+            import os
+            import mimetypes
+            
+            filename = os.path.basename(image_filepath)
+            mime_type, _ = mimetypes.guess_type(image_filepath)
+            if not mime_type:
+                mime_type = "image/jpeg"
+                
+            files = {"file": (filename, file, mime_type)}
             upload_response = requests.post(UPLOAD_ENDPOINT, files=files, timeout=30)
             
         if upload_response.status_code != 200:
