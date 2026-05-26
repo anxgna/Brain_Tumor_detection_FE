@@ -7,11 +7,11 @@ UPLOAD_ENDPOINT = f"{API_URL}/upload"
 PREDICT_ENDPOINT_BASE = f"{API_URL}/predict"
 
 # Application Settings
-APP_TITLE = "🧠✨ Cute Brain Tumor Detector ✨🧠"
+APP_TITLE = "🧠 Brain Tumor Detector 🧠"
 APP_DESCRIPTION = (
-    "Welcome to the **Brain Tumor Detection System**! 💕\n\n"
+    "Welcome to the **Brain Tumor Detection System**! \n\n"
     "Upload your MRI scan below, and our smart AI will help analyze it for you. "
-    "Please wait a moment while we process the image! 🌸"
+    "Please wait a moment while we process the image! "
 )
 
 # UI Settings
