@@ -10,7 +10,8 @@ def format_prediction_result(result: dict) -> tuple[str, str, str]:
         err_type = result["error"]
         if err_type == "backend_offline":
             return ERROR_BACKEND_OFFLINE, "", ""
-        return "An unknown error occurred during prediction. 😢", "", ""
+        details = result.get("details", "Unknown error")
+        return f"An error occurred: {details} 😢", "", ""
         
     prediction = result.get("prediction", "Unknown")
     confidence = result.get("confidence", 0.0)
